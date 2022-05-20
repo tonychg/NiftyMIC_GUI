@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "niftymic_gui"
-version = "0.1.0"
+version = "0.0.1"
 description = ""
 authors = ["TonyChG <tonychg7@pm.me>"]
 
 [tool.poetry.scripts]
-niftymic-gui = "niftymic_gui.__main__:main"
+niftymic-gui = "niftymic_gui.main:main"
 
 [tool.poetry.dependencies]
 python = "^3.8"

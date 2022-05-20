@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Type=Application
+Terminal=false
+Exec=niftymic-gui
+Name=NiftyMIC GUI
+Comment=Desktop shortcut to start NiftyMIC GUI
