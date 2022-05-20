@@ -1,0 +1,3 @@
+
+class NiftyMICError(Exception):
+    pass
