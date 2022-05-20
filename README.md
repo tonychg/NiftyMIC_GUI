@@ -15,5 +15,5 @@ You need Docker to use the docker image of NiftyMIC : https://hub.docker.com/r/r
 ## Installation
 
 ```
-pip install niftymic_gui
+pip install niftymic-gui
 ```

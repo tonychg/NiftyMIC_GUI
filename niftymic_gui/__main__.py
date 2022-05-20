@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import (
 from niftymic_gui.gui import QtApp
 
 
-if __name__ == "__main__":
+def main():
     app = QApplication(sys.argv)
     window = QtApp()
     window.show()
