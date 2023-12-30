@@ -1,0 +1,18 @@
+[package]
+name = "niftymic_gui"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+thiserror = "1.0.52"
+clap = { version = "4.4.12", features = ["derive"] }
+env_logger = "0.10.1"
+log = "0.4.20"
+zip = "0.6.6"
+ulid = "1.1.0"
+walkdir = "2"
+rayon = "1.8.0"
+config = {version = "0.13.1", features = ["toml"]}
+serde = "1.0.193"

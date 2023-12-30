@@ -1,0 +1,11 @@
+[output]
+base_directory = "dist"
+
+[executables]
+dcm2niix = "dcm2niix"
+docker = "docker"
+medcon = "medcon"
+
+[docker]
+image = "renbem/niftymic:latest"
+working_directory = "/work"
