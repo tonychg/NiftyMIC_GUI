@@ -74,7 +74,6 @@ impl DockerWrapper {
         let mut args = Vec::new();
         args.push("run".to_string());
         args.push("--rm".to_string());
-        args.push("-t".to_string());
         args.push("-v".to_string());
         args.push(format!("{}:{}", working_directory, self.working_directory));
         args.push(self.image.to_string());
