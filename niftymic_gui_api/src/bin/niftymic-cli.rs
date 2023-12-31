@@ -44,7 +44,9 @@ fn execute_cmdline() -> Result<()> {
             niftymic.convert_dicom_to_nifti()?;
             niftymic.generate_masks_from_nifti()?;
             niftymic.reconstruct(Options::default())?;
-            niftymic.convert_nifti_to_dicom()
+            let result = niftymic.convert_nifti_to_dicom()?;
+            log::info!("Result: {}", result);
+            Ok(())
         }
         Commands::GenerateMasks { working_directory } => {
             let niftymic = NiftyMic::from_working_directory(working_directory, &config)?;
@@ -57,13 +59,15 @@ fn execute_cmdline() -> Result<()> {
         }
         Commands::ConvertNifti { working_directory } => {
             let niftymic = NiftyMic::from_working_directory(working_directory, &config)?;
-            niftymic.convert_nifti_to_dicom()
+            let result = niftymic.convert_nifti_to_dicom()?;
+            log::info!("Result: {}", result);
+            Ok(())
         }
     }
 }
 
 fn main() {
-    env_logger::init();
+    pretty_env_logger::init();
     match execute_cmdline() {
         Ok(_) => println!("Terminated with no errors"),
         Err(err) => error!("{}", err.to_string()),

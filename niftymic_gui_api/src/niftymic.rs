@@ -36,6 +36,8 @@ pub enum Error {
     FailedToOpen(String),
     #[error("Failed to create working directory {0}")]
     FailedToCreateWorkingDirectory(String),
+    #[error("Failed to start bot")]
+    FailedToStartBot,
 }
 
 pub type Result<T> = std::result::Result<T, self::Error>;
@@ -362,7 +364,7 @@ impl NiftyMic {
         Ok(())
     }
 
-    pub fn convert_nifti_to_dicom(&self) -> Result<()> {
+    pub fn convert_nifti_to_dicom(&self) -> Result<String> {
         info!("Start converting NIfTI to DICOM");
         debug!(
             "Set working_directory to: {}",
@@ -388,6 +390,7 @@ impl NiftyMic {
         create_output_archive(
             &self.working_directory.get_absolute_dicom_output_directory(),
             &self.working_directory.get_absolute_dicom_output(),
-        )
+        )?;
+        Ok(self.working_directory.get_absolute_dicom_output())
     }
 }

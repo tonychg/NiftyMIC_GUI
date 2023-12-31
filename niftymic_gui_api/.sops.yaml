@@ -1,0 +1,7 @@
+keys:
+  - &tonychg age1pz6qxsm4wlrj090xwqxyufe4xq2h50rustcfqzfgwlxn5rhhypuqe6tc25
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|toml|env|ini)$
+    key_groups:
+      - age:
+          - *tonychg

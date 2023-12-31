@@ -28,6 +28,7 @@ pub struct Output {
 pub struct Telegram {
     pub enable: bool,
     pub teloxide_token: String,
+    pub channel_id: String,
 }
 
 #[derive(Debug, Deserialize, Clone)]
@@ -35,7 +36,7 @@ pub struct Config {
     pub output: Output,
     pub executables: Executable,
     pub docker: Docker,
-    pub telegram: Telegram,
+    pub telegram: Option<Telegram>,
 }
 
 impl Config {

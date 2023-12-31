@@ -66,6 +66,7 @@
             go-task
             xmedcon
             dcm2niix
+            sops
           ];
         };
       });
